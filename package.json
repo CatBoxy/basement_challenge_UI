@@ -1,0 +1,33 @@
+{
+  "name": "basement-challenge-ui",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^1.6.6",
+    "@chakra-ui/transition": "^1.3.4",
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "framer-motion": "^4.1.17",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "react-fast-marquee": "^1.2.1",
+    "react-icons": "^4.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react-refresh": "^1.3.1",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-react": "^7.25.1",
+    "prettier": "^2.3.2",
+    "vite": "^2.4.4"
+  }
+}

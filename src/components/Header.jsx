@@ -1,14 +1,15 @@
-import { Box, Stack, Image, Icon } from '@chakra-ui/react';
+import { Box, Stack, Image } from '@chakra-ui/react';
 import React from 'react';
-import { WiMoonAltThirdQuarter } from 'react-icons/wi';
-import { MdHd, MdHighQuality } from 'react-icons/md';
-import { IoMdCloseCircleOutline } from 'react-icons/io';
-import { RiAlertFill } from 'react-icons/ri';
 
+import useWindowSize from '../assets/utils/useWindowSize';
+
+import HeaderSimbols from './HeaderSimbols';
 import Ticker from './Ticker';
 import Cart from './Cart';
 
 function Header() {
+  const { width } = useWindowSize();
+
   return (
     <React.Fragment>
       <Stack bg="primary">
@@ -19,30 +20,13 @@ function Header() {
           justifyContent="space-between"
         >
           <Stack justifyContent="center" alignItems="center">
-            <Image h={4} src="../../logo.svg" alt="Basement logo" />
+            {width > 992 ? (
+              <Image h={4} src="../../logo.svg" alt="Basement logo" />
+            ) : (
+              <Image src="../../favicon.ico" alt="Basement logo" h="35px" />
+            )}
           </Stack>
-          <Stack spacing={1} direction="row" alignItems="center">
-            <Icon as={WiMoonAltThirdQuarter} color="secondary" />
-            <Icon as={MdHd} color="secondary" />
-            <Stack
-              alignItems="center"
-              justifyContent="center"
-              borderRadius="50%"
-              border="1px"
-              borderColor="secondary"
-              width="50px"
-              height="14px"
-              overflow="hidden"
-            >
-              <Icon
-                as={IoMdCloseCircleOutline}
-                color="secondary"
-                position="absolute"
-              />
-            </Stack>
-            <Icon as={MdHighQuality} color="secondary" />
-            <Icon as={RiAlertFill} color="secondary" />
-          </Stack>
+          {width > 992 ? <HeaderSimbols /> : null}
           <Cart></Cart>
         </Stack>
         <Stack px={4} justifyContent="center">

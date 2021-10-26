@@ -41,6 +41,11 @@ function Cart() {
     localCart ? setCart(localCart) : setCart([]);
   };
 
+  let itemsCount = 0;
+  cart.forEach((item) => {
+    itemsCount += item.quantity;
+  });
+
   let totalPrice = 0;
   cart.forEach((item) => {
     totalPrice += item.price * item.quantity;
@@ -48,7 +53,7 @@ function Cart() {
   return (
     <React.Fragment>
       <Button onClick={renderProducts}>
-        <Text color="secondary">CART(0)</Text>
+        <Text color="secondary">{`CART(${itemsCount})`}</Text>
       </Button>
       <Drawer
         isOpen={isOpen}
